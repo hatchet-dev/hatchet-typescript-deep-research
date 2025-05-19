@@ -1,5 +1,5 @@
 import { hatchet } from '@/hatchet.client';
-import { generateText } from '../../../blocks/ai/generateText';
+import { generateText } from '../../../utils/ai/generateText';
 import { z } from 'zod';
 
 export const SummarizeInputSchema = z.object({

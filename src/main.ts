@@ -3,11 +3,11 @@ import {
   deepResearchAgent,
   deepResearchTaskbox,
 } from './agents/deep-research';
-import { generateText } from './blocks/ai/generateText';
+import { generateText } from './utils/ai/generateText';
 import { summarize } from './agents/deep-research/tasks/summarize';
 import { search } from './agents/deep-research/tasks/search';
 import { planSearch } from './agents/deep-research/tasks/plan-search';
-import { websiteToMd } from './blocks/ai/website-to-md';
+import { websiteToMd } from './utils/ai/website-to-md';
 import { judgeResults } from './agents/deep-research/tasks/judge-results';
 import { extractFacts } from './agents/deep-research/tasks/extract-facts';
 import { judgeFacts } from './agents/deep-research/tasks/judge-facts';

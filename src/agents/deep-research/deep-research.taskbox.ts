@@ -1,4 +1,4 @@
-import { taskbox } from '@/blocks/ai';
+import { taskbox } from '@/utils/ai';
 import { search, SearchInputSchema } from '@/agents/deep-research/tasks/search';
 import { summarize, SummarizeInputSchema } from '@/agents/deep-research/tasks/summarize';
 

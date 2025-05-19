@@ -1,7 +1,7 @@
 import { hatchet } from '@/hatchet.client';
 import { search } from '@/agents/deep-research/tasks/search';
 import { planSearch } from '@/agents/deep-research/tasks/plan-search';
-import { websiteToMd } from '@/blocks/ai/website-to-md';
+import { websiteToMd } from '@/utils/ai/website-to-md';
 import { summarize } from '@/agents/deep-research/tasks/summarize';
 import { judgeResults } from '@/agents/deep-research/tasks/judge-results';
 import { extractFacts } from '@/agents/deep-research/tasks/extract-facts';
