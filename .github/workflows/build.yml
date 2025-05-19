@@ -1,0 +1,25 @@
+name: build
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: simple-examples/package.json
+      - name: Simple – Install dependencies
+        working-directory: simple-examples
+        run: npm ci
+      - name: Simple – Build
+        working-directory: simple-examples
+        run: npm run build
+      - name: Child Workflows – Install dependencies
+        working-directory: child-workflows
+        run: npm ci
+      - name: Child Workflows – Build
+        working-directory: child-workflows
+        run: npm run build
