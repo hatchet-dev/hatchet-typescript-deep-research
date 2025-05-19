@@ -1,53 +1,50 @@
-# Hatchet First Workflow Example
+# Hatchet Deep Research Example
 
-This is an example project demonstrating how to use Hatchet with TypeScript. For detailed setup instructions, see the [Hatchet Setup Guide](https://docs.hatchet.run/home/setup).
+This is a TypeScript project demonstrating deep research capabilities using Hatchet and OpenAI.
 
 ## Prerequisites
 
-Before running this project, make sure you have the following:
+- Node.js (v16 or higher)
+- pnpm (v9.15.4 or higher)
 
-1. [Node.js v16 or higher](https://nodejs.org/en/download)
-2. npm, yarn, or pnpm package manager
+## Getting Started
 
-## Setup
-
-1. Clone the repository:
-
+1. Install dependencies:
 ```bash
-git clone https://github.com/hatchet-dev/hatchet-typescript-quickstart.git
-cd hatchet-typescript-quickstart
-```
-
-2. Set the required environment variable `HATCHET_CLIENT_TOKEN` created in the [Getting Started Guide](https://docs.hatchet.run/home/hatchet-cloud-quickstart).
-
-```bash
-export HATCHET_CLIENT_TOKEN=<token>
-```
-
-> Note: If you're self hosting you may need to set `HATCHET_CLIENT_TLS_STRATEGY=none` to disable TLS
-
-3. Install the project dependencies:
-
-```bash
-npm install
-# or
-yarn install
-# or
 pnpm install
 ```
 
-### Running an example
-
-1. Start a Hatchet worker:
-
+2. Create a `.env` file in the root directory with your OpenAI  and Hatchet API keys:
 ```bash
-npm run start
+OPENAI_API_KEY=your_api_key_here
+HATCHET_CLIENT_TOKEN=your_hatchet_token
 ```
 
-2. In a new terminal, run the example task:
-
+3. Run the development server:
 ```bash
-npm run run:simple
+pnpm dev
 ```
 
-This will trigger the task on the worker running in the first terminal and print the output to the second terminal.
+## Project Structure
+
+- `src/main.ts` - Main entry point of the application
+- `src/` - Source code directory
+
+## Dependencies
+
+This project uses:
+- Hatchet TypeScript SDK
+- OpenAI SDK
+- TypeScript
+- Various development tools for TypeScript development
+
+## Development
+
+- `pnpm dev` - Start the development server
+- `pnpm lint` - Run TypeScript type checking
+
+## Learn More
+
+To learn more about Hatchet, visit:
+- [Hatchet Documentation](https://docs.hatchet.run)
+- [Hatchet GitHub Repository](https://github.com/hatchet-dev/hatchet)
