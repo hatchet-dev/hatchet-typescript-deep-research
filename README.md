@@ -65,7 +65,6 @@ This project is designed as a starting point to build your own agent. The primar
 The agent implements the following control loop:
 
 ```mermaid
-
 flowchart TD
     Start([Start]) --> Input[/User Query/]
     Input --> InitVars[Initialize Variables]
@@ -87,9 +86,10 @@ flowchart TD
     JudgeResults --> ReturnResult[Return Result]
     ReturnResult --> End([End])
 
-    classDef process fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef decision fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef io fill:#9f6,stroke:#333,stroke-width:2px;
+    %% Light grayscale fill with dark text
+    classDef process fill:#f5f5f5,stroke:#24292e,stroke-width:1px,color:#24292e;
+    classDef decision fill:#eeeeee,stroke:#24292e,stroke-width:1px,color:#24292e;
+    classDef io fill:#f0f0f0,stroke:#24292e,stroke-width:1px,color:#24292e;
 
     class PlanSearch,SearchQueries,ProcessSources,ConvertToMd,ExtractFacts,JudgeFacts,GenerateSummary,JudgeResults,UpdateMissing process;
     class Decision decision;
