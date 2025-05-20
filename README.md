@@ -1,6 +1,6 @@
 # Deep Research Agent
 
-This is an example agent which performs deep research using [Hatchet](https://hatchet.run/) and [OpenAI](https://openai.com/). While the agent itself is very simple, it is based on best practices that we have observed at Hatchet while executing billions of tasks and agent executions per month.
+This is an example agent which performs deep research using [Hatchet](https://hatchet.run/) and [OpenAI](https://openai.com/). While the agent itself is very simple, it is based on best practices that we have observed at Hatchet while executing billions of tasks and agent executions per month. It is intended to be a forkable starting point for agentic ai projects. 
 
 ## Demo
 
@@ -73,9 +73,9 @@ flowchart TD
 
     subgraph IterationLoop["Iteration Loop (max 3 iterations)"]
         InitVars --> PlanSearch[Plan Search: based on query, existing facts, and missing aspects]
-        PlanSearch --> SearchQueries[Execute Search Queries]
+        PlanSearch -->|x N| SearchQueries[Execute Search Queries]
         SearchQueries --> ProcessSources[Process & Deduplicate Sources]
-        ProcessSources --> ConvertToMd[Convert Sources to Markdown]
+        ProcessSources --> |x M| ConvertToMd[Convert Sources to Markdown]
         ConvertToMd --> ExtractFacts[Extract Facts from Sources]
         ExtractFacts --> JudgeFacts[Judge if Facts are Sufficient]
         JudgeFacts --> Decision{Enough Facts or Max Iterations?}
