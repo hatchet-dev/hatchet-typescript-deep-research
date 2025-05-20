@@ -1,4 +1,6 @@
 import * as readline from "readline";
+import * as fs from "fs";
+import * as path from "path";
 import { deepResearchAgent } from "./agents/deep-research";
 
 // Create readline interface
@@ -121,6 +123,71 @@ function prettifyJSON(obj: any): string {
   return JSON.stringify(obj, null, 2);
 }
 
+function createTimestamp(): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+
+  return `${year}${month}${day}_${hours}${minutes}${seconds}`;
+}
+
+function formatFullResults(result: any): string {
+  const jsonString = JSON.stringify(result, null, 2);
+
+  return `
+<details>
+<summary>Full Research Results (Click to expand)</summary>
+
+\`\`\`json
+${jsonString}
+\`\`\`
+
+</details>
+`;
+}
+
+async function ensureResultsDirectory(): Promise<void> {
+  const resultsDir = path.join(process.cwd(), "results");
+
+  try {
+    await fs.promises.access(resultsDir);
+  } catch (error) {
+    // Directory doesn't exist, create it
+    await fs.promises.mkdir(resultsDir, { recursive: true });
+    console.log("📁 Created results directory");
+  }
+}
+
+async function saveResultsToFile(result: any, prompt: string): Promise<string> {
+  await ensureResultsDirectory();
+
+  const timestamp = createTimestamp();
+  const filename = `${timestamp}.md`;
+  const filepath = path.join(process.cwd(), "results", filename);
+
+  // Extract the summary content
+  const summary = result.result?.summary || "No summary available";
+
+  // Create the complete markdown content
+  let markdownContent = `# Deep Research Results\n\n`;
+  markdownContent += `**Research Query:** ${prompt}\n\n`;
+  markdownContent += `**Generated:** ${new Date().toISOString()}\n\n`;
+  markdownContent += `---\n\n`;
+  markdownContent += summary;
+  markdownContent += formatFullResults(result);
+
+  try {
+    await fs.promises.writeFile(filepath, markdownContent, "utf8");
+    return filepath;
+  } catch (error) {
+    throw new Error(`Failed to save results to file: ${error}`);
+  }
+}
+
 async function executeResearch(message: string): Promise<void> {
   console.log("\n🔄 Executing deep research workflow...");
   console.log("This may take several minutes...\n");
@@ -131,12 +198,43 @@ async function executeResearch(message: string): Promise<void> {
     const endTime = Date.now();
     const duration = (endTime - startTime) / 1000;
 
+    if (!result) {
+      throw new Error("No result returned from the research agent.");
+    }
+
     console.log("✅ Research completed successfully!");
     console.log(`⏱️  Execution time: ${duration.toFixed(2)} seconds\n`);
-    console.log("📊 Research Results:");
+
+    // Save results to file
+    console.log("💾 Saving results to file...");
+    const savedFilePath = await saveResultsToFile(result, message);
+    console.log(`📄 Results saved to: ${savedFilePath}\n`);
+
+    console.log("📊 Research Results Summary:");
     console.log("=".repeat(50));
-    console.log(prettifyJSON(result));
+
+    // Display a brief summary to console
+    if (result.result?.summary) {
+      // Extract first few lines of the summary for console display
+      const lines = result.result.summary.split("\n");
+      const briefSummary = lines.slice(0, 10).join("\n");
+      console.log(briefSummary);
+
+      if (lines.length > 10) {
+        console.log("\n... (full results available in saved file) ...");
+      }
+    } else {
+      console.log("Summary not available in expected format");
+      console.log("Raw result:", prettifyJSON(result));
+    }
+
     console.log("=".repeat(50));
+    console.log(`\n📁 Full results saved to: ${path.resolve(savedFilePath)}`);
+
+    // Display source count
+    if (result.result?.sources) {
+      console.log(`🔗 Number of sources: ${result.result.sources.length}`);
+    }
   } catch (error) {
     console.error("❌ Error during research execution:");
     console.error(error);

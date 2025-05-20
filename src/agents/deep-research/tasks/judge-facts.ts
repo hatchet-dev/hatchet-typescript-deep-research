@@ -1,7 +1,7 @@
-import { hatchet } from '@/hatchet.client';
-import { z } from 'zod';
-import { generateObject } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { hatchet } from "@/hatchet.client";
+import { z } from "zod";
+import { generateObject } from "ai";
+import { openai } from "@ai-sdk/openai";
 
 const JudgeFactsInputSchema = z.object({
   query: z.string(),
@@ -17,7 +17,8 @@ type JudgeFactsOutput = {
 };
 
 export const judgeFacts = hatchet.task({
-  name: 'judge-facts',
+  name: "judge-facts",
+  executionTimeout: "5m",
   fn: async (input: JudgeFactsInput): Promise<JudgeFactsOutput> => {
     const validatedInput = JudgeFactsInputSchema.parse(input);
 
@@ -27,7 +28,7 @@ Evaluate if we have enough facts to comprehensively answer this query:
 """${validatedInput.query}"""
 
 Current facts:
-${validatedInput.facts.map((fact, i) => `${i + 1}. ${fact}`).join('\n')}
+${validatedInput.facts.map((fact, i) => `${i + 1}. ${fact}`).join("\n")}
 
 Consider:
 1. Are there any key aspects of the query that aren't covered by the current facts?
@@ -35,7 +36,7 @@ Consider:
 3. Are there any gaps in the information that would prevent a comprehensive answer?
 4. Are there any technical jargon words that are not defined in the facts that require additional research?
 `,
-      model: openai('gpt-4.1-mini'),
+      model: openai("gpt-4.1-mini"),
       schema: z.object({
         hasEnoughFacts: z.boolean(),
         reason: z.string(),
@@ -49,4 +50,4 @@ Consider:
       missingAspects: result.object.missingAspects,
     };
   },
-}); 
+});

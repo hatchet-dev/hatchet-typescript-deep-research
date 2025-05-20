@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "dotenv -e .env -- ts-node-dev -r tsconfig-paths/register ./src/main.ts",
+    "cli": "dotenv -e .env -- ts-node-dev -r tsconfig-paths/register ./src/cli.main.ts",
     "lint": "tsc",
     "build": "tsc",
     "start": "node dist/main.js"

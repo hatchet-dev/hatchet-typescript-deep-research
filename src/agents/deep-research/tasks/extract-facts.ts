@@ -1,7 +1,7 @@
-import { hatchet } from '@/hatchet.client';
-import { z } from 'zod';
-import { generateObject } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { hatchet } from "@/hatchet.client";
+import { z } from "zod";
+import { generateObject } from "ai";
+import { openai } from "@ai-sdk/openai";
 
 const ExtractFactsInputSchema = z.object({
   source: z.string(),
@@ -25,7 +25,8 @@ type ExtractFactsOutput = {
 };
 
 export const extractFacts = hatchet.task({
-  name: 'extract-facts',
+  name: "extract-facts",
+  executionTimeout: "5m",
   fn: async (input: ExtractFactsInput): Promise<ExtractFactsOutput> => {
     const validatedInput = ExtractFactsInputSchema.parse(input);
 
@@ -39,17 +40,17 @@ Source:
 
 Extract only factual statements that are directly relevant to the query. Each fact should be a complete, standalone statement.
 `,
-      model: openai('gpt-4.1-mini'),
+      model: openai("gpt-4.1-mini"),
       schema: z.object({
         facts: z.array(z.string()),
       }),
     });
 
     return {
-      facts: result.object.facts.map(fact => ({
+      facts: result.object.facts.map((fact) => ({
         text: fact,
         sourceIndex: validatedInput.sourceInfo.index,
       })),
     };
   },
-}); 
+});
