@@ -6,6 +6,8 @@ This is an example agent which performs deep research using [Hatchet](https://ha
 
 **Video demo:**
 
+https://github.com/user-attachments/assets/d99f8ae2-8ce5-4ce3-9792-d10c1038e413
+
 [**Example report**](./results/20250519_Renewables.md)
 
 ## FAQs
