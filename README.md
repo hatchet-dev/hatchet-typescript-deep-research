@@ -70,13 +70,13 @@ flowchart TD
     Input --> InitVars[Initialize Variables]
 
     subgraph IterationLoop["Iteration Loop (max 3 iterations)"]
-        InitVars --> PlanSearch[Plan Search\nbased on query, existing facts,\nand missing aspects]
+        InitVars --> PlanSearch[Plan Search: based on query, existing facts, and missing aspects]
         PlanSearch --> SearchQueries[Execute Search Queries]
         SearchQueries --> ProcessSources[Process & Deduplicate Sources]
         ProcessSources --> ConvertToMd[Convert Sources to Markdown]
         ConvertToMd --> ExtractFacts[Extract Facts from Sources]
         ExtractFacts --> JudgeFacts[Judge if Facts are Sufficient]
-        JudgeFacts --> Decision{Enough Facts\nor Max Iterations?}
+        JudgeFacts --> Decision{Enough Facts or Max Iterations?}
         Decision -->|No| UpdateMissing[Update Missing Aspects]
         UpdateMissing --> PlanSearch
     end
