@@ -12,7 +12,7 @@ This is an example agent which performs deep research using [Hatchet](https://ha
 
 **What's the purpose of this repository?**
 
-This is not meant as a replacement for Deep Research, but as a starting point for building your own research agent in your product.
+This is a starting point for building an agent in your own product -- it is not meant as a replacement for Deep Research.
 
 **What is Hatchet?**
 
