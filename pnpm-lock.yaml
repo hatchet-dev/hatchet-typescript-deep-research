@@ -28,8 +28,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       '@types/node':
-        specifier: ^22.15.23
-        version: 22.15.23
+        specifier: ^22.15.24
+        version: 22.15.24
       dotenv-cli:
         specifier: ^7.4.4
         version: 7.4.4
@@ -38,10 +38,10 @@ importers:
         version: 9.27.0
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.15.23)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.15.24)(typescript@5.8.3)
       ts-node-dev:
         specifier: ^2.0.0
-        version: 2.0.0(@types/node@22.15.23)(typescript@5.8.3)
+        version: 2.0.0(@types/node@22.15.24)(typescript@5.8.3)
       tsconfig-paths:
         specifier: ^4.2.0
         version: 4.2.0
@@ -231,11 +231,11 @@ packages:
   '@types/node-fetch@2.6.12':
     resolution: {integrity: sha512-8nneRWKCg3rMtF69nLQJnOYUcbafYeFSjqkw3jCRLsqkWFlHaoQrr5mXmofFGOx3DKn7UfmBMyov8ySvLRVldA==}
 
-  '@types/node@18.19.104':
-    resolution: {integrity: sha512-mqjoYx1RjmN61vjnHWfiWzAlwvBKutoUdm+kYLPnjI5DCh8ZqofUhaTbT3WLl7bt3itR8DuCf8ShnxI0JvIC3g==}
+  '@types/node@18.19.105':
+    resolution: {integrity: sha512-a+DrwD2VyzqQR2W0EVF8EaCh6Em4ilQAYLEPZnMNkQHXR7ziWW7RUhZMWZAgRpkDDAdUIcJOXSPJT/zBEwz3sA==}
 
-  '@types/node@22.15.23':
-    resolution: {integrity: sha512-7Ec1zaFPF4RJ0eXu1YT/xgiebqwqoJz8rYPDi/O2BcZ++Wpt0Kq9cl0eg6NN6bYbPnR67ZLo7St5Q3UK0SnARw==}
+  '@types/node@22.15.24':
+    resolution: {integrity: sha512-w9CZGm9RDjzTh/D+hFwlBJ3ziUaVw7oufKA3vOFSOZlzmW9AkZnfjPb+DLnrV6qtgL/LNmP0/2zBNCFHL3F0ng==}
 
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
@@ -1255,14 +1255,14 @@ snapshots:
 
   '@types/node-fetch@2.6.12':
     dependencies:
-      '@types/node': 22.15.23
+      '@types/node': 22.15.24
       form-data: 4.0.2
 
-  '@types/node@18.19.104':
+  '@types/node@18.19.105':
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@22.15.23':
+  '@types/node@22.15.24':
     dependencies:
       undici-types: 6.21.0
 
@@ -1768,7 +1768,7 @@ snapshots:
 
   openai@4.103.0(zod@3.25.32):
     dependencies:
-      '@types/node': 18.19.104
+      '@types/node': 18.19.105
       '@types/node-fetch': 2.6.12
       abort-controller: 3.0.0
       agentkeepalive: 4.6.0
@@ -1825,7 +1825,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 22.15.23
+      '@types/node': 22.15.24
       long: 5.3.2
 
   proxy-from-env@1.1.0: {}
@@ -1941,7 +1941,7 @@ snapshots:
 
   ts-error@1.0.6: {}
 
-  ts-node-dev@2.0.0(@types/node@22.15.23)(typescript@5.8.3):
+  ts-node-dev@2.0.0(@types/node@22.15.24)(typescript@5.8.3):
     dependencies:
       chokidar: 3.6.0
       dynamic-dedupe: 0.3.0
@@ -1951,7 +1951,7 @@ snapshots:
       rimraf: 2.7.1
       source-map-support: 0.5.21
       tree-kill: 1.2.2
-      ts-node: 10.9.2(@types/node@22.15.23)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@22.15.24)(typescript@5.8.3)
       tsconfig: 7.0.0
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -1959,14 +1959,14 @@ snapshots:
       - '@swc/wasm'
       - '@types/node'
 
-  ts-node@10.9.2(@types/node@22.15.23)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.15.24)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.23
+      '@types/node': 22.15.24
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
