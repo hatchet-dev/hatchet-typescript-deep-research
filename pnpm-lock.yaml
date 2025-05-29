@@ -12,8 +12,8 @@ importers:
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.32)
       '@hatchet-dev/typescript-sdk':
-        specifier: ^1.6.2
-        version: 1.6.2
+        specifier: ^1.6.3
+        version: 1.6.3
       ai:
         specifier: ^4.3.16
         version: 4.3.16(react@19.1.0)(zod@3.25.32)
@@ -83,8 +83,8 @@ packages:
     peerDependencies:
       zod: ^3.23.8
 
-  '@bufbuild/protobuf@2.5.0':
-    resolution: {integrity: sha512-nniMblXT+dNyubek2OLKAYJnG/in4tmfS2c5CDnIvqfF9kFlERSG3FCBvmdqerpkWuPv0qhdGKReQ2OqKPG20w==}
+  '@bufbuild/protobuf@2.5.1':
+    resolution: {integrity: sha512-lut4UTvKL8tqtend0UDu7R79/n9jA7Jtxf77RNPbxtmWqfWI4qQ9bTjf7KCS4vfqLmpQbuHr1ciqJumAgJODdw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -137,8 +137,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  '@hatchet-dev/typescript-sdk@1.6.2':
-    resolution: {integrity: sha512-QrPAt5QSgTv3uII8q54MA9p/eY+Jkea1pd807XxtQ4usEcgzBotkXtDbhJoLNGJDl7jfI+ufyx1buxde0j5Q6g==}
+  '@hatchet-dev/typescript-sdk@1.6.3':
+    resolution: {integrity: sha512-JKejabGJgY0FJ/zCjMojC73/NtWXj/n1lCBF8nQsv8YKpHwLUK/VSbcM0UecgZVVrpo1t7IoMAOp9LU2rwhkFw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -823,8 +823,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  protobufjs@7.4.0:
-    resolution: {integrity: sha512-mRUWCc3KUU4w1jU8sGxICXH/gNS94DvI1gxqDvBzhj1JpcsimQkYiOJfwsPUykUI5ZaspFbSgmBLER8IrQ3tqw==}
+  protobufjs@7.5.3:
+    resolution: {integrity: sha512-sildjKwVqOI2kmFDiXQ6aEB0fjYTafpEvIBs8tOR8qI4spuL9OPROLVu2qZqi/xgCfsHIwVqlaF8JBjWFHnKbw==}
     engines: {node: '>=12.0.0'}
 
   proxy-from-env@1.1.0:
@@ -1111,7 +1111,7 @@ snapshots:
       zod: 3.25.32
       zod-to-json-schema: 3.24.5(zod@3.25.32)
 
-  '@bufbuild/protobuf@2.5.0': {}
+  '@bufbuild/protobuf@2.5.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -1170,19 +1170,19 @@ snapshots:
     dependencies:
       lodash.camelcase: 4.3.0
       long: 5.3.2
-      protobufjs: 7.4.0
+      protobufjs: 7.5.3
       yargs: 17.7.2
 
-  '@hatchet-dev/typescript-sdk@1.6.2':
+  '@hatchet-dev/typescript-sdk@1.6.3':
     dependencies:
-      '@bufbuild/protobuf': 2.5.0
+      '@bufbuild/protobuf': 2.5.1
       '@types/qs': 6.14.0
       abort-controller-x: 0.4.3
       axios: 1.9.0
       long: 5.3.2
       nice-grpc: 2.1.12
       nice-grpc-common: 2.0.2
-      protobufjs: 7.4.0
+      protobufjs: 7.5.3
       qs: 6.14.0
       semver: 7.7.2
       yaml: 2.8.0
@@ -1813,7 +1813,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  protobufjs@7.4.0:
+  protobufjs@7.5.3:
     dependencies:
       '@protobufjs/aspromise': 1.1.2
       '@protobufjs/base64': 1.1.2
