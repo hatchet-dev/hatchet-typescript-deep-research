@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@hatchet-dev/typescript-sdk": "^1.7.1",
+    "@hatchet-dev/typescript-sdk": "^1.8.0",
     "ai": "^4.3.16",
     "openai": "^4.103.0",
     "zod": "^3.25.67"
