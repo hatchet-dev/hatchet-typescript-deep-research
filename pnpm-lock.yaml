@@ -12,8 +12,8 @@ importers:
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
       '@hatchet-dev/typescript-sdk':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.8.2
+        version: 1.8.2
       ai:
         specifier: ^4.3.16
         version: 4.3.16(react@19.1.0)(zod@3.25.67)
@@ -141,8 +141,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  '@hatchet-dev/typescript-sdk@1.8.0':
-    resolution: {integrity: sha512-yCsmzAtfo0u3Y/5lA7F7JJcMuLtbmPe9ZBQfGxaKp0+oxKaZ65oLBlUDVl+R++NtmVV8PhJzFFMInotwbGAy6g==}
+  '@hatchet-dev/typescript-sdk@1.8.2':
+    resolution: {integrity: sha512-hyZSKSaQJMq2ZMb3JL2DICUuv+qnWVVZ4G75ih722/ou5X82v1Vm334sh5/e8dMXiRJsC0mTWyPiW3c2YGxnNg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1194,7 +1194,7 @@ snapshots:
       protobufjs: 7.5.3
       yargs: 17.7.2
 
-  '@hatchet-dev/typescript-sdk@1.8.0':
+  '@hatchet-dev/typescript-sdk@1.8.2':
     dependencies:
       '@bufbuild/protobuf': 2.5.2
       '@types/qs': 6.14.0
