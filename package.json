@@ -14,7 +14,7 @@
     "@hatchet-dev/typescript-sdk": "^1.9.1",
     "ai": "^4.3.17",
     "openai": "^4.103.0",
-    "zod": "^3.25.75"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
