@@ -1,1 +1,1 @@
-FROM ghcr.io/hatchet-dev/hatchet/hatchet-api:v0.73.63
+FROM ghcr.io/hatchet-dev/hatchet/hatchet-api:v0.73.64
