@@ -1,1 +1,1 @@
-FROM ghcr.io/hatchet-dev/hatchet/hatchet-engine:v0.83.4
+FROM ghcr.io/hatchet-dev/hatchet/hatchet-engine:v0.83.8
